@@ -1,5 +1,6 @@
 package sandwichshop;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class sandwichorder {
@@ -31,19 +32,19 @@ public class sandwichorder {
         }
 
         // Calculate final price
-        
-        double discountAmount = price * discountRate;
-        double finalPrice = price - discountAmount;
 
+        double finalPrice = price * (1 - discountRate);
         // Display results
-        System.out.println("Original Price:" + price);
+
+
+        System.out.println("Original Price: $" + price);
+
         if (discountRate > 0) {
-            System.out.println("Discount:" + (discountAmount * 100.0) / 100.0
-                    + (int)(discountRate * 100));
+            System.out.println("Discount Applied");
         } else {
             System.out.println("No discount applied.");
         }
-        System.out.println("Final Price: $" + finalPrice);
+        System.out.printf("Final Price: %.2f",finalPrice);
     }
 }
 
